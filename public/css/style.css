@@ -1,0 +1,412 @@
+/************************************************************
+ * FONTS
+ ************************************************************/
+
+@font-face {
+  font-family: "AauxPro";
+  src: url("../fonts/aauxpro-thin.woff") format("woff"),
+    url("../fonts/aauxpro-thin.ttf") format("truetype");
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: "AauxPro";
+  src: url("../fonts/aauxpro-regular.woff") format("woff"),
+    url("../fonts/aauxpro-regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "AauxPro";
+  src: url("../fonts/aauxpro-medium.woff") format("woff"),
+    url("../fonts/aauxpro-medium.ttf") format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "AauxPro";
+  src: url("../fonts/aauxpro-bold.woff") format("woff"),
+    url("../fonts/aauxpro-bold.ttf") format("truetype");
+  font-weight: 700;
+}
+
+/************************************************************
+ * STRUCTURE PRINCIPALE
+ ************************************************************/
+
+body {
+  min-height: 100vh;
+  position: relative;
+  padding-top: 60px;
+  padding-bottom: 100px;
+  background-color: #f1f1f1;
+}
+
+.main-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/************************************************************
+ * BOOTSTRAP OVERRIDE
+ ************************************************************/
+
+body {
+  font-family: "AauxPro", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+a {
+  text-decoration: none;
+}
+a:not(.btn, .navbar-brand, .nav-link, .dropdown-item, .page-link):active,
+a:not(.btn, .navbar-brand, .nav-link, .dropdown-item, .page-link):hover {
+  text-decoration: underline;
+}
+
+.page-link {
+  color: #6c757d;
+}
+.page-link:focus {
+  box-shadow: 0 0 0 0.2rem rgb(108 117 125 / 50%);
+}
+.page-item.active .page-link {
+  background-color: var(--tm-warm-grey);
+  border-color: var(--tm-light-grey);
+}
+
+/************************************************************
+ * DATATABLES OVERRIDE
+ ************************************************************/
+
+/**
+ * Boutons (buttons)
+ */
+
+.dt-buttons button {
+  /* Style de btn-sm : */
+  padding: 0.25rem 0.5rem !important;
+  font-size: 0.875rem !important;
+  line-height: 1.5;
+  border-radius: 0.2rem;
+}
+
+ul.pagination li.paginate_button a {
+  padding: 0.25rem 0.65rem !important;
+  font-size: 0.875rem !important;
+  line-height: 1.5;
+}
+
+/**
+ * Filtres (searchPanes)
+ */
+
+.dtsp-titleRow .dtsp-title {
+  display: none;
+}
+
+.dtsp-titleRow button {
+  margin: 0 0 0.25rem 0.25rem;
+  /* Style de btn-sm : */
+  padding: 0.25rem 0.5rem !important;
+  font-size: 0.875rem !important;
+  line-height: 1.5;
+  border-radius: 0.2rem;
+}
+
+.dtsp-subRow1 .form-control {
+  height: calc(1.5em + 0.5rem + 2px);
+  line-height: 1.5;
+  border-radius: 0.2rem;
+}
+
+.dtsp-searchPanes .dtsp-searchPane {
+  margin-top: 0 !important;
+  margin-bottom: 0.75rem !important;
+}
+
+div.dtsp-panesContainer div.dataTables_wrapper div.dataTables_scrollBody {
+  height: auto !important;
+}
+
+/************************************************************
+ * CLASSES UTILES
+ ************************************************************/
+
+/**
+ * Bouton
+ */
+
+.btn-group-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page-actions {
+  margin: 1rem auto;
+  justify-content: space-between;
+}
+.btn-group-actions .btn {
+  margin-left: 1rem;
+}
+.btn-group-actions .btn:first-child {
+  margin-left: 0;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+}
+
+.no-btn {
+  background-color: #fff;
+  border-color: #fff;
+}
+
+.btn-action {
+  color: #fff;
+  background-color: var(--tm-blue);
+  border-color: var(--tm-blue);
+}
+.btn-action:hover {
+  color: #fff;
+  background-color: var(--tm-blue-darken);
+  border-color: var(--tm-blue-darken2);
+}
+.btn-check:focus + .btn-action,
+.btn-action:focus {
+  color: #fff;
+  background-color: var(--tm-blue-darken);
+  border-color: var(--tm-blue-darken2);
+  box-shadow: 0 0 0 0.25rem var(--tm-blue-shadow);
+}
+.btn-check:checked + .btn-action,
+.btn-check:active + .btn-action,
+.btn-action:active,
+.btn-action.active,
+.show > .btn-action.dropdown-toggle {
+  color: #fff;
+  background-color: var(--tm-blue-darken);
+  border-color: var(--tm-blue-darken2);
+}
+.btn-check:checked + .btn-action:focus,
+.btn-check:active + .btn-action:focus,
+.btn-action:active:focus,
+.btn-action.active:focus,
+.show > .btn-action.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.25rem var(--tm-blue-shadow);
+}
+.btn-action:disabled,
+.btn-action.disabled {
+  color: #fff;
+  background-color: var(--tm-blue);
+  border-color: var(--tm-blue);
+}
+
+.btn-outline-action {
+  color: var(--tm-blue);
+  border-color: var(--tm-blue);
+}
+.btn-outline-action:hover {
+  color: #fff;
+  background-color: var(--tm-blue);
+  border-color: var(--tm-blue);
+}
+.btn-check:focus + .btn-outline-action,
+.btn-outline-action:focus {
+  box-shadow: 0 0 0 0.25rem var(--tm-blue-shadow);
+}
+.btn-check:checked + .btn-outline-action,
+.btn-check:active + .btn-outline-action,
+.btn-outline-action:active,
+.btn-outline-action.active,
+.btn-outline-action.dropdown-toggle.show {
+  color: #fff;
+  background-color: var(--tm-blue);
+  border-color: var(--tm-blue);
+}
+.btn-check:checked + .btn-outline-action:focus,
+.btn-check:active + .btn-outline-action:focus,
+.btn-outline-action:active:focus,
+.btn-outline-action.active:focus,
+.btn-outline-action.dropdown-toggle.show:focus {
+  box-shadow: 0 0 0 0.25rem var(--tm-blue-shadow);
+}
+.btn-outline-action:disabled,
+.btn-outline-action.disabled {
+  color: var(--tm-blue);
+  background-color: transparent;
+}
+
+/**
+ * Curseur
+ */
+
+.cursor-help {
+  cursor: help;
+}
+
+.cursor-move,
+.handle {
+  cursor: move;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/**
+ * Flottement
+ */
+
+.clear-left {
+  clear: left;
+}
+.clear-right {
+  clear: right;
+}
+.clear-both {
+  clear: both;
+}
+
+/**
+ * Formulaire
+ */
+
+.form-group.required .control-label:after {
+  content: "*";
+  color: red;
+  font-weight: bold;
+}
+
+.form-hint {
+  text-align: right;
+  font-size: 0.8em;
+  color: #6c757d;
+  margin-bottom: 0;
+}
+
+/**
+ * Lien
+ */
+
+a .fa,
+a:hover .fa,
+a:active .fa,
+a:visited .fa,
+a:link .fa {
+  color: initial;
+  text-decoration: none;
+}
+
+/**
+ * Liste
+ */
+
+.list-style-folder {
+  list-style-image: url("../img/icons/folder-solid.svg");
+}
+.list-style-tree {
+  list-style: none;
+}
+.list-style-tree li::before {
+  content: "\02514";
+  margin-right: 0.5rem;
+  color: #6c757d;
+}
+
+/**
+ * Scroll Spy
+ */
+
+.navbar-scrollspy a {
+  color: #6c757d;
+}
+.navbar-scrollspy a.nav-link.h5 {
+  padding: 0.25rem 0.5rem;
+}
+.navbar-scrollspy .nav-pills .nav-pills a.nav-link {
+  margin: 0.25rem 0 0 1rem;
+  padding: 0 0.5rem;
+}
+.navbar-scrollspy .nav-pills .nav-link.active {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+/**
+ * Spinner
+ */
+
+.spinner-container {
+  text-align: center;
+  color: #ffc107;
+  font-style: italic;
+}
+.spinner-container p {
+  margin-top: 1rem;
+}
+
+/**
+ * Table
+ */
+
+table.align-middle th,
+table.align-middle td {
+  vertical-align: middle;
+}
+
+/**
+ * Typographie
+ */
+
+.page-title {
+  color: var(--tm-dark-grey-darken);
+  margin: 1.25rem 0;
+  font-weight: 700;
+}
+
+/************************************************************
+ * HEADER
+ ************************************************************/
+
+.navbar-brand {
+  font-weight: 700;
+}
+.navbar-nav a.nav-link {
+  font-weight: 500;
+}
+
+/**
+ * Recherche
+ */
+
+.nav-search #search {
+  color: #fff;
+  background-color: var(--tm-warm-grey);
+  border-color: var(--tm-light-grey);
+}
+.nav-search [type="submit"] {
+  border-color: var(--tm-light-grey);
+  border-left-color: transparent;
+  background-color: var(--tm-warm-grey);
+  color: #ffffff80;
+}
+.nav-search [type="submit"]:active,
+.nav-search [type="submit"]:hover {
+  color: #fff;
+}
+.nav-search #search::placeholder {
+  color: #cfcfcf;
+}
+.navbar .form-control:focus {
+  box-shadow: 0 0 0 0.2rem #ffffff40;
+}
+
+/************************************************************
+ * PAGES
+ ************************************************************/

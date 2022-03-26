@@ -1,0 +1,5 @@
+!**/.gitkeep
+.scannerwork
+node_modules
+sonar-project.properties
+vendor
